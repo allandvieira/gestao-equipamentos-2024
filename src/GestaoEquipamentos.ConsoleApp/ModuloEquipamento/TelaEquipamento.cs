@@ -15,9 +15,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("|        Gestão de Equipamentos        |");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("|            Gestão de Equipamentos            |");
+            Console.WriteLine("-----------------------------------------------");
 
             Console.WriteLine();
 
@@ -25,7 +25,6 @@
             Console.WriteLine("2 - Editar Equipamento");
             Console.WriteLine("3 - Excluir Equipamento");
             Console.WriteLine("4 - Visualizar Equipamentos");
-
             Console.WriteLine("S - Voltar");
 
             Console.WriteLine();
@@ -40,9 +39,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("|        Gestão de Equipamentos        |");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("|            Gestão de Equipamentos            |");
+            Console.WriteLine("-----------------------------------------------");
 
             Console.WriteLine();
 
@@ -59,10 +58,10 @@
             Console.Write("Digite o nome do fabricante do equipamento: ");
             string fabricante = Console.ReadLine();
 
-            Console.Write("Digite o preço de aquisição do equipamento: R$ ");
+            Console.Write("Digite o preço de compra do equipamento: R$ ");
             decimal precoAquisicao = Convert.ToDecimal(Console.ReadLine());
 
-            Console.Write("Digite a data de fabricação do equipamento (formato: dd/MM/aaaa): ");
+            Console.Write("Digite a data de fabricação do equipamento (Formato: dd/MM/aaaa): ");
             DateTime dataFabricacao = Convert.ToDateTime(Console.ReadLine());
 
             Equipamento equipamento = new Equipamento(nome, numeroSerie, fabricante, precoAquisicao, dataFabricacao);
@@ -76,9 +75,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("|        Gestão de Equipamentos        |");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("|            Gestão de Equipamentos            |");
+            Console.WriteLine("-----------------------------------------------");
 
             Console.WriteLine();
 
@@ -132,9 +131,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("|        Gestão de Equipamentos        |");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("|            Gestão de Equipamentos            |");
+            Console.WriteLine("-----------------------------------------------");
 
             Console.WriteLine();
 
@@ -170,9 +169,9 @@
             {
                 Console.Clear();
 
-                Console.WriteLine("----------------------------------------");
-                Console.WriteLine("|        Gestão de Equipamentos        |");
-                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("|            Gestão de Equipamentos            |");
+                Console.WriteLine("-----------------------------------------------");
 
                 Console.WriteLine();
 
@@ -197,7 +196,7 @@
 
                 Console.WriteLine(
                     "{0, -10} | {1, -15} | {2, -15} | {3, -10} | {4, -10}",
-                    e.Id, e.Nome, e.Fabricante, e.PrecoAquisicao, e.DataFabricacao.ToShortDateString() // "17/04/2024"
+                    e.Id, e.Nome, e.Fabricante, e.PrecoAquisicao, e.DataFabricacao.ToShortDateString()
                 );
             }
 

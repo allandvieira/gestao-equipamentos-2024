@@ -1,4 +1,5 @@
-﻿using GestaoEquipamentos.ConsoleApp.ModuloEquipamento;
+﻿using GestaoEquipamentos.ConsoleApp.Chamados;
+using GestaoEquipamentos.ConsoleApp.ModuloEquipamento;
 
 namespace GestaoEquipamentos.ConsoleApp
 {
@@ -7,8 +8,10 @@ namespace GestaoEquipamentos.ConsoleApp
         static void Main(string[] args)
         {
             TelaEquipamento telaEquipamento = new TelaEquipamento();
+            TelaChamados telaChamado = new TelaChamados(); 
 
             bool opcaoSairEscolhida = false;
+            char operacaoEscolhida;
 
             while (!opcaoSairEscolhida)
             {
@@ -17,7 +20,7 @@ namespace GestaoEquipamentos.ConsoleApp
                 switch (opcaoEscolhida)
                 {
                     case '1':
-                        char operacaoEscolhida = telaEquipamento.ApresentarMenu();
+                        operacaoEscolhida = telaEquipamento.ApresentarMenu();
 
                         if (operacaoEscolhida == 'S' || operacaoEscolhida == 's')
                             break;
@@ -33,6 +36,29 @@ namespace GestaoEquipamentos.ConsoleApp
 
                         else if (operacaoEscolhida == '4')
                             telaEquipamento.VisualizarEquipamentos(true);
+
+                        break;
+
+                    case '2': // Nova opção para controle de chamados
+                        operacaoEscolhida = telaChamado.ApresentarMenu();
+
+                        if (operacaoEscolhida == 'S' || operacaoEscolhida == 's')
+                            break;
+
+                        if (operacaoEscolhida == '1')
+                            telaChamado.AbrirChamado();
+
+                        else if (operacaoEscolhida == '2')
+                            telaChamado.EditarChamado();
+
+                        else if (operacaoEscolhida == '3')
+                            telaChamado.FecharChamado();
+
+                        else if (operacaoEscolhida == '4')
+                            telaChamado.ExcluirChamado();
+
+                        else if (operacaoEscolhida == '5')
+                            telaChamado.VisualizarChamados(true);
 
                         break;
 

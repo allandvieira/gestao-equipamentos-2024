@@ -3,9 +3,7 @@
     public class Equipamento
     {
         public int Id;
-        public string Nome;
-        public string NumeroSerie;
-        public string Fabricante;
+        public string Nome, NumeroSerie, Fabricante;
         public decimal PrecoAquisicao;
         public DateTime DataFabricacao;
 
