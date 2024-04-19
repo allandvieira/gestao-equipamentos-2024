@@ -73,9 +73,9 @@ namespace GestaoEquipamentos.ConsoleApp
         {
             Console.Clear();
 
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine("|            Gestão de Equipamentos            |");
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
 
             Console.WriteLine();
 

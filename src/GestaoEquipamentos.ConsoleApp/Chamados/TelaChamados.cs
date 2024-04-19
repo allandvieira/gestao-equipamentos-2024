@@ -8,9 +8,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("|           Controle de Chamados        |");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("|    Controle de Chamados    |");
+            Console.WriteLine("------------------------------");
 
             Console.WriteLine();
 
@@ -34,9 +34,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("|           Controle de Chamados        |");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("---------------------------------------------------------------");
+            Console.WriteLine("|                    Gestão de Equipamentos                    |");
+            Console.WriteLine("---------------------------------------------------------------");
 
             Console.WriteLine();
 
@@ -67,9 +67,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine("|           Controle de Chamados        |");
-            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("---------------------------------------------------------------");
+            Console.WriteLine("|                    Gestão de Equipamentos                    |");
+            Console.WriteLine("---------------------------------------------------------------");
 
             Console.WriteLine();
 
@@ -142,9 +142,9 @@
             {
                 Console.Clear();
 
-                Console.WriteLine("-----------------------------------------------");
-                Console.WriteLine("|            Gestão de Equipamentos            |");
-                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("---------------------------------------------------------------");
+                Console.WriteLine("|                    Gestão de Equipamentos                    |");
+                Console.WriteLine("---------------------------------------------------------------");
 
                 Console.WriteLine();
 
@@ -153,7 +153,7 @@
             }
 
             Console.WriteLine(
-                "{0, -10} | {, -15} | {2, -10} | {3, -15} | {4, -10}",
+                "{0, -10} | {1, -15} | {2, -10} | {3, -30} | {4, -10}",
                 "Id", "Equipamento", "Titulo", "Descricao", "Data do Chamado"
             );
 
@@ -173,21 +173,22 @@
                     continue;
 
                 Console.WriteLine(
-                    "ID: {0}, Equipamento: {1}, Título: {2}, Descrição: {3}, Data: {4}",
-                    c.Id, c.IdEquipamento, c.Titulo, c.Descricao, c.DataChamado.ToShortDateString()
+                    "{0, -10} | {1, -15} | {2, -10} | {3, -30} | {4, -10}",
+                    c.Id, c.IdEquipamento, c.Titulo, c.Descricao.Length > 30 ? c.Descricao.Substring(0, 27) + "..." : c.Descricao, c.DataChamado.ToShortDateString()
                 );
             }
 
             Console.ReadLine();
             Console.WriteLine();
         }
+
         public void ExcluirChamado()
         {
             Console.Clear();
 
-            Console.WriteLine("-----------------------------------------------");
-            Console.WriteLine("|            Gestão de Equipamentos            |");
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("---------------------------------------------------------------");
+            Console.WriteLine("|                    Gestão de Equipamentos                    |");
+            Console.WriteLine("---------------------------------------------------------------");
 
             Console.WriteLine();
 

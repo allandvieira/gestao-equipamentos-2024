@@ -15,9 +15,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine("|            Gestão de Equipamentos            |");
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
 
             Console.WriteLine();
 
@@ -39,9 +39,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine("|            Gestão de Equipamentos            |");
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
 
             Console.WriteLine();
 
@@ -75,9 +75,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine("|            Gestão de Equipamentos            |");
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
 
             Console.WriteLine();
 
@@ -131,9 +131,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
             Console.WriteLine("|            Gestão de Equipamentos            |");
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
 
             Console.WriteLine();
 
@@ -169,9 +169,9 @@
             {
                 Console.Clear();
 
-                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("------------------------------------------------");
                 Console.WriteLine("|            Gestão de Equipamentos            |");
-                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("------------------------------------------------");
 
                 Console.WriteLine();
 
@@ -181,8 +181,8 @@
             Console.WriteLine();
 
             Console.WriteLine(
-                "{0, -10} | {1, -15} | {2, -15} | {3, -10} | {4, -10}",
-                "Id", "Nome", "Fabricante", "Preço", "Data de Fabricação"
+                "{0, -10} | {1, -15} | {2, -15} | {3, -15} | {4, -10} | {5, -10}",
+                "Id", "Nome", "Numero de série", "Fabricante", "Preço", "Data de Fabricação"
             );
 
             Equipamento[] equipamentosCadastrados = repositorio.SelecionarEquipamentos();
@@ -195,8 +195,8 @@
                     continue;
 
                 Console.WriteLine(
-                    "{0, -10} | {1, -15} | {2, -15} | {3, -10} | {4, -10}",
-                    e.Id, e.Nome, e.Fabricante, e.PrecoAquisicao, e.DataFabricacao.ToShortDateString()
+                    "{0, -10} | {1, -15} | {2, -15} | {3, -15} | {4, -10} | {5, -10}",
+                    e.Id, e.Nome, e.NumeroSerie, e.Fabricante, e.PrecoAquisicao, e.DataFabricacao.ToShortDateString()
                 );
             }
 
