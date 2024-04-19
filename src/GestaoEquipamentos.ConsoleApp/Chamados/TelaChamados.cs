@@ -53,7 +53,10 @@
             Console.Write("Digite a descrição do problema: ");
             string descricao = Console.ReadLine();
 
-            Chamado chamado = new Chamado(idEquipamento, titulo, descricao);
+            Console.Write("Digite a data de abertura do chamado (Formato: dd/MM/aaaa): ");
+            DateTime dataChamado = Convert.ToDateTime(Console.ReadLine());
+
+            Chamado chamado = new Chamado(idEquipamento, titulo, descricao, dataChamado);
 
             repositorio.CadastrarChamado(chamado);
 
@@ -93,7 +96,10 @@
             Console.Write("Digite a nova descrição do problema: ");
             string descricao = Console.ReadLine();
 
-            Chamado novoChamado = new Chamado(idChamadoEscolhido, titulo, descricao);
+            Console.Write("Digite a data de fabricação do equipamento (formato: dd-MM-aaaa): ");
+            DateTime dataChamado = Convert.ToDateTime(Console.ReadLine());
+
+            Chamado novoChamado = new Chamado(idChamadoEscolhido, titulo, descricao, dataChamado);
 
             repositorio.EditarChamado(idChamadoEscolhido, novoChamado);
 
@@ -146,6 +152,11 @@
 
             }
 
+            Console.WriteLine(
+                "{0, -10} | {, -15} | {2, -10} | {3, -15} | {4, -10}",
+                "Id", "Equipamento", "Titulo", "Descricao", "Data do Chamado"
+            );
+
             Chamado[] chamadosCadastrados = repositorio.SelecionarChamados();
 
             if (chamadosCadastrados.Length == 0)
@@ -182,6 +193,8 @@
 
             Console.WriteLine("Excluindo Chamado...");
 
+            Console.WriteLine();
+
             VisualizarChamados(false);
 
             Console.Write("Digite o ID do chamado que deseja excluir: ");
@@ -193,10 +206,15 @@
                 return;
             }
 
-            repositorio.ExcluirChamado(idChamadoEscolhido);
+            bool conseguiuExcluir = repositorio.ExcluirChamado(idChamadoEscolhido);
+
+            if (!conseguiuExcluir)
+            {
+                Program.ExibirMensagem("Houve um erro durante a exclusão do equipamento", ConsoleColor.Red);
+                return;
+            }
 
             Program.ExibirMensagem("O chamado foi excluído com sucesso!", ConsoleColor.Green);
         }
-
     }
 }
