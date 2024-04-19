@@ -19,7 +19,6 @@
             Console.WriteLine("3 - Fechar Chamado");
             Console.WriteLine("4 - Excluir Chamado");
             Console.WriteLine("5 - Visualizar Chamados");
-
             Console.WriteLine("S - Voltar");
 
             Console.WriteLine();
@@ -67,9 +66,9 @@
         {
             Console.Clear();
 
-            Console.WriteLine("---------------------------------------------------------------");
-            Console.WriteLine("|                    Gestão de Equipamentos                    |");
-            Console.WriteLine("---------------------------------------------------------------");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("|            Gestão de Equipamentos            |");
+            Console.WriteLine("------------------------------------------------");
 
             Console.WriteLine();
 
@@ -82,7 +81,8 @@
             Console.Write("Digite o ID do chamado que deseja editar: ");
             int idChamadoEscolhido = Convert.ToInt32(Console.ReadLine());
 
-            if (!repositorio.ExisteChamado(idChamadoEscolhido))
+            Chamado chamadoExistente = repositorio.SelecionarChamadoPorId(idChamadoEscolhido);
+            if (chamadoExistente == null)
             {
                 Program.ExibirMensagem("O chamado mencionado não existe!", ConsoleColor.DarkYellow);
                 return;
@@ -96,8 +96,8 @@
             Console.Write("Digite a nova descrição do problema: ");
             string descricao = Console.ReadLine();
 
-            Console.Write("Digite a data de fabricação do equipamento (formato: dd-MM-aaaa): ");
-            DateTime dataChamado = Convert.ToDateTime(Console.ReadLine());
+            // Usa a data de abertura original do chamado
+            DateTime dataChamado = chamadoExistente.DataChamado;
 
             Chamado novoChamado = new Chamado(idChamadoEscolhido, titulo, descricao, dataChamado);
 
@@ -153,8 +153,8 @@
             }
 
             Console.WriteLine(
-                "{0, -10} | {1, -15} | {2, -10} | {3, -30} | {4, -10}",
-                "Id", "Equipamento", "Titulo", "Descricao", "Data do Chamado"
+                "{0, -10} | {1, -15} | {2, -10} | {3, -30} | {4, -10} | {5, -30}",
+                "Id", "Equipamento", "Titulo", "Descricao", "Data do Chamado", "Dias de abertura do chamado"
             );
 
             Chamado[] chamadosCadastrados = repositorio.SelecionarChamados();
@@ -172,9 +172,11 @@
                 if (c == null)
                     continue;
 
+                int diasAberto = (DateTime.Now - c.DataChamado).Days;
+
                 Console.WriteLine(
-                    "{0, -10} | {1, -15} | {2, -10} | {3, -30} | {4, -10}",
-                    c.Id, c.IdEquipamento, c.Titulo, c.Descricao.Length > 30 ? c.Descricao.Substring(0, 27) + "..." : c.Descricao, c.DataChamado.ToShortDateString()
+                    "{0, -10} | {1, -15} | {2, -10} | {3, -30} | {4, -10} | {5, -30}",
+                    c.Id, c.IdEquipamento, c.Titulo, c.Descricao.Length > 30 ? c.Descricao.Substring(0, 27) + "..." : c.Descricao, c.DataChamado.ToShortDateString(), diasAberto
                 );
             }
 

@@ -10,7 +10,6 @@ namespace GestaoEquipamentos.ConsoleApp.Chamados
 
         public Chamado(int idEquipamento, string titulo, string descricao, DateTime dataChamado)
         {
-            Id = GeradorIdChamados.GerarIdChamado();
             IdEquipamento = idEquipamento;
             Titulo = titulo;
             Descricao = descricao;

@@ -55,6 +55,19 @@ namespace GestaoEquipamentos.ConsoleApp.Chamados
             return chamados;
         }
 
+        public Chamado SelecionarChamadoPorId(int id)
+        {
+            foreach (Chamado chamado in chamados)
+            {
+                if (chamado.Id == id)
+                {
+                    return chamado;
+                }
+            }
+
+            return null; // Retorna null se nenhum chamado com o ID especificado for encontrado
+        }
+
         public bool ExisteChamado(int id)
         {
             for (int i = 0; i < chamados.Length; i++)
