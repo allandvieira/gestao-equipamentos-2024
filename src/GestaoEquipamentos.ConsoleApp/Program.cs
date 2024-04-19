@@ -39,7 +39,7 @@ namespace GestaoEquipamentos.ConsoleApp
 
                         break;
 
-                    case '2': // Nova opção para controle de chamados
+                    case '2':
                         operacaoEscolhida = telaChamado.ApresentarMenu();
 
                         if (operacaoEscolhida == 'S' || operacaoEscolhida == 's')
